@@ -1,0 +1,221 @@
+$o-grid-is-silent:  false;
+@import 'o-fonts/main';
+@import 'o-colors/main';
+@import "o-assets/main";
+
+@include oAssetsSetModulePaths((
+  'o-footer': '//build.origami.ft.com/files/o-footer@^3.1.0'
+));
+
+@import 'o-grid/main';
+@import 'o-footer/main';
+
+@import 'fonts';
+
+
+body {
+
+  margin: 0;
+  border: 0;
+  font-family: oFontsGetFontFamilyWithFallbacks(MetricWeb);
+  @include oColorsFor(page, background);
+}
+
+main p {
+  font-size: 1em;
+  line-height: 1.5rem;
+  max-width: 600px;
+  margin: 0.75em auto;
+  font-weight: 200;
+  color: #333333;
+
+}
+
+#ft-header {
+  height: 50px;
+  // background-color:  $ft-color-lightpink;
+  width: 100%;
+  // position:  fixed;
+  // top:  0;
+  // z-index:  50;
+  // overflow:  hidden;
+  text-align: center;
+  border-bottom: 1px solid #cec6b9;
+  // box-shadow:  0 2px 2px 0 rgba(0,0,0,.1);
+  
+  a > img {
+    margin-top: 13px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    border: 0;
+  }
+  a > img:hover {
+    opacity: 1;
+  }
+}
+
+.story {
+  counter-reset: sections;
+  > h1 {
+    font-family: FinancierDisplayWeb;
+    font-weight: normal;
+    text-align: center;
+    font-size: 2.25em;
+    margin: 1.2rem 0;
+  }
+
+  > p:first-of-type {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: FinancierDisplayWeb;
+    font-size: 1.2em;
+    line-height: 1.35em;
+    margin-bottom: 1em;
+    color: oColorsGetPaletteColor('grey-tint5');
+  }
+
+  > h6 {
+    max-width: 600px;
+    margin: 0 auto;
+    color: oColorsGetPaletteColor('pink-tint5');
+    font-weight: 200;
+    text-align: center;
+    margin-top: -4px;
+    margin-bottom: 1em;
+    font-size: 0.875em;
+  }
+
+  > h2 {
+    font-size: 1.5em;
+    margin: 0.4em 0;
+    text-align: center;
+    color: #333333;
+    font-weight: 600;
+
+    &:before {
+      display: block;
+      background-size: 200px 60px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 50px;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27200%27%20height%3D%2760%27%20viewBox%3D%270%200%20200%2060%27%3E%3Cpath%20fill%3D%27%23CEC6B9%27%20d%3D%27M0%2030h200v1H0z%27%2F%3E%3Ccircle%20fill%3D%27%23FFF1E0%27%20cx%3D%27100.2%27%20cy%3D%2730%27%20r%3D%2730%27%2F%3E%3Ccircle%20fill%3D%27%23FFF1E0%27%20stroke%3D%27%23CEC6B9%27%20stroke-miterlimit%3D%2710%27%20cx%3D%27100.2%27%20cy%3D%2730%27%20r%3D%2720%27%2F%3E%3C%2Fsvg%3E");
+      text-align: center;
+      line-height: 50px;
+      font-family: FinancierDisplay;
+      font-weight: normal;
+      color: #9e2f50;
+      margin-bottom: 12px;
+      font-size: 1.75rem;
+      content: counter(sections);
+      counter-increment: sections;
+    }
+
+
+  }
+}
+
+.o-grid-row {
+  margin-bottom: 1.5em;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+.xlshow,
+.lshow,
+.mshow,
+.sshow,
+.defaultshow,
+.mshow-xlshow {
+  display: none;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+}
+
+.lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
+.mshow { @include oGridColumn((default:  hide, S:  12, L:  hide)); }
+.mshow-xlshow { @include oGridColumn((default:  hide, S: 12, M:10)); @include oGridCenter;}
+// .sshow { @include oGridColumn((default:  12, S: 12, M: hide)); }
+.defaultshow { @include oGridColumn((default: 12, S: hide)); }
+
+[data-map] {
+  > .mshow-xlshow {
+    max-width: 800px;
+  }
+}
+
+.flow-chart {
+  @include oGridColumn((M: 12, L: 10, XL: 8));
+  @include oGridCenter;
+  background-color: oColorsGetPaletteColor('pink-tint1');
+  text-align: center;
+  color: oColorsGetPaletteColor('pink-tint3');
+  font-size: 4em;
+  font-weight: 200;
+  height: 450px;
+  padding-top: 160px;
+}
+
+@include oGridRespondTo(L) {
+  .story {
+    > h1 {
+      font-size: 3.75em;
+      margin: 1.6rem 0;
+    }
+    > p:first-of-type {
+      font-family: FinancierTextWeb;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+ @include oGridRespondTo($from: M, $until: L) {
+  .story {
+    > h1 {
+      font-size: 3.25em;
+    }
+    > p:first-of-type {
+      font-size: 1.33em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@include oGridRespondTo($from: S) {
+  .byline {
+    font-size: 1em;
+    margin-bottom: 1.5em;
+  }
+  .story > h2 {
+    margin: 0.67em 0;
+    font-size: 1.75em;
+  }
+  main p {
+    font-size: 1.25em;
+    line-height: 1.875rem;
+  }
+  .story > h2:before {
+    font-size: 2rem;
+  }
+}
+@include oGridRespondTo($from: S, $until: M) {
+  .story {
+    > h1 {
+      font-size: 3em;
+    }
+   > p:first-of-type {
+      font-size: 1.25em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.o-footer {
+  border-top: 0;
+}
+
+.o-footer__pearson {
+  background-color: oColorsGetPaletteColor('pink-tint3');
+}
