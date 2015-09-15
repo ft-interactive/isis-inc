@@ -82,13 +82,14 @@ main p {
     font-weight: 200;
     text-align: center;
     margin-top: -4px;
-    margin-bottom: 1em;
+    margin-bottom: -1.3em;
     font-size: 0.875em;
   }
 
   > h2 {
     font-size: 1.5em;
-    margin: 0.4em 0;
+    margin: 1.7em 0 0.4em;
+
     text-align: center;
     color: #333333;
     font-weight: 600;
@@ -117,10 +118,6 @@ main p {
 
 .o-grid-row {
   margin-bottom: 1.5em;
-}
-
-section {
-  margin-bottom: 3em;
 }
 
 .xlshow,
@@ -184,14 +181,17 @@ section {
 }
 
 @include oGridRespondTo($from: S) {
-  .byline {
-    font-size: 1em;
-    margin-bottom: 1.5em;
+  .story {
+
+    > h2 {
+      margin: 1.75em 0 0.67em;
+      font-size: 1.75em;
+    }
+    > h6 {
+      font-size: 1em;
+    }
   }
-  .story > h2 {
-    margin: 0.67em 0;
-    font-size: 1.75em;
-  }
+
   main p {
     font-size: 1.25em;
     line-height: 1.875rem;
