@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // detach all the map elements from the page and keep them in an object
   var maps = {};
+  var bullets = []
   select('[data-map]').forEach(function (el) {
     var slug = el.getAttribute('data-map');
     maps[slug] = el;
@@ -25,10 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // inside the story div, replace all the "MAP:" h1s with their corresponding map element
   select('h1', story).forEach(function (h1) {
-    console.log(h1, h1.textContent.substring(0, 5));
     if (h1.textContent.substring(0, 5) === 'MAP: ') {
       var slug = h1.textContent.substring(5);
       h1.parentNode.replaceChild(maps[slug], h1);
+
+    }
+    if (h1.textContent.substring(0, 8) === 'BULLET: ') {
+      var bulletText = h1.textContent.substring(8);
+      bullets.push(bulletText);
+      select('.market__text').forEach(function (bullet, indx) {
+        bullet.innerHTML = bullets[indx];
+
+      })
+      h1.parentNode.removeChild(h1);
     }
   });
 });

@@ -12,6 +12,7 @@ $o-grid-is-silent:  false;
 
 @import 'fonts';
 
+$o-grid-gutter: 20px;
 
 body {
 
@@ -21,14 +22,19 @@ body {
   @include oColorsFor(page, background);
 }
 
-main p {
-  font-size: 1em;
+main p,
+.market__text {
+  font-size: 1rem;
   line-height: 1.5rem;
   max-width: 600px;
   margin: 0.75em auto;
   font-weight: 200;
   color: #333333;
 
+}
+
+.market__text {
+  margin: 0;
 }
 
 #ft-header {
@@ -65,7 +71,7 @@ main p {
   }
 
   > p:first-of-type {
-    max-width: 600px;
+    max-width: 800px;
     text-align: center;
     margin: 0 auto;
     font-family: FinancierDisplayWeb;
@@ -84,6 +90,15 @@ main p {
     margin-top: -4px;
     margin-bottom: -1.3em;
     font-size: 0.875em;
+  }
+
+  > h3 {
+    text-align: center;
+    font-family: FinancierDisplayWeb;
+    font-style: italic;
+    font-size: 3em;
+    letter-spacing: 0.02em;
+    color: #9e2f50;
   }
 
   > h2 {
@@ -133,26 +148,58 @@ main p {
 
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
 .mshow { @include oGridColumn((default:  hide, S:  12, L:  hide)); }
-.mshow-xlshow { @include oGridColumn((default:  hide, S: 12, M:10)); @include oGridCenter;}
+.mshow-xlshow { @include oGridColumn((default:  hide, S: 12)); @include oGridCenter;}
 // .sshow { @include oGridColumn((default:  12, S: 12, M: hide)); }
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
-
-[data-map] {
-  > .mshow-xlshow {
-    max-width: 800px;
+.showall { @include oGridColumn((default: 12)); }
+[data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
+.left {
+  @include oGridColumn((default: 12, S:6, M:4)); 
+  @include oGridRespondTo(M) {
+    @include oGridPush(1); // outputs left: -33.333333333%;
   }
 }
+.market__text {
+  position: relative;
+  top: -8px;  
+  margin-bottom: 1em;
+}
 
-.flow-chart {
-  @include oGridColumn((M: 12, L: 10, XL: 8));
-  @include oGridCenter;
-  background-color: oColorsGetPaletteColor('pink-tint1');
-  text-align: center;
-  color: oColorsGetPaletteColor('pink-tint3');
-  font-size: 4em;
-  font-weight: 200;
-  height: 450px;
-  padding-top: 160px;
+.rebels,
+.isis,
+.isis-refineries,
+.mosul{
+  @include oGridColumn((default: 12, S:5, M:5));
+  @include oGridRespondTo(M) {
+    @include oGridPush(1); // outputs left: -33.333333333%;
+  }
+}
+.rebels,
+.isis,
+.mosul {
+  > div:first-of-type {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+}
+// [data-map] {
+//   > .mshow-xlshow {
+//     max-width: 800px;
+//   }
+// }
+
+.mshow-xlshow {
+    max-width: 800px;
+}
+
+[data-map="rebel-market"],
+[data-map="mosul-market"],
+[data-map="isis-market"] {
+  margin: 2.5em 0;
+}
+
+[data-map="rebel-market"] {
+  margin-bottom: 0;
 }
 
 @include oGridRespondTo(L) {
@@ -192,10 +239,12 @@ main p {
     }
   }
 
-  main p {
+  main p,
+  .market__text {
     font-size: 1.25em;
     line-height: 1.875rem;
   }
+
   .story > h2:before {
     font-size: 2rem;
   }
