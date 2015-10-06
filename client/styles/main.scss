@@ -147,9 +147,8 @@ main p,
 }
 
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
-.mshow { @include oGridColumn((default:  hide, S:  12, L:  hide)); }
-.mshow-xlshow { @include oGridColumn((default:  hide, S: 12)); @include oGridCenter;}
-// .sshow { @include oGridColumn((default:  12, S: 12, M: hide)); }
+.mshow { @include oGridColumn((default:  hide, M:  12, L:  hide)); }
+.sshow { @include oGridColumn((default:  hide, S: 12, M: hide));}
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
 .showall { @include oGridColumn((default: 12)); }
 [data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
