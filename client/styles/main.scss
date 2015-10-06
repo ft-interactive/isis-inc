@@ -154,10 +154,11 @@ main p,
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
 .showall { @include oGridColumn((default: 12)); }
 [data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
+
 .left {
-  @include oGridColumn((default: 12, S:6, M:4)); 
-  @include oGridRespondTo(M) {
-    @include oGridPush(1); // outputs left: -33.333333333%;
+  @include oGridColumn((default: 12, S: 7, M: 6, L: 4)); 
+  @include oGridRespondTo(L) {
+    @include oGridPush(2); // outputs left: -33.333333333%;
   }
 }
 .market__text {
@@ -170,9 +171,9 @@ main p,
 .isis,
 .isis-refineries,
 .mosul{
-  @include oGridColumn((default: 12, S:5, M:5));
-  @include oGridRespondTo(M) {
-    @include oGridPush(1); // outputs left: -33.333333333%;
+  @include oGridColumn((default: 12, S: 5, M: 6, L: 4));
+  @include oGridRespondTo(L) {
+    @include oGridPush(2); // outputs left: -33.333333333%;
   }
 }
 .rebels,
@@ -193,10 +194,16 @@ main p,
     max-width: 800px;
 }
 
+.refineriesHolder {
+  @include oGridColumn((default: 12));
+  @include oGridCenter;
+}
+
+#ig-isis-refineries-all-graphic,
 [data-map="rebel-market"],
 [data-map="mosul-market"],
 [data-map="isis-market"] {
-  margin: 2.5em 0;
+  margin: 1em 0;
 }
 
 [data-map="rebel-market"] {
@@ -239,7 +246,9 @@ main p,
       font-size: 1em;
     }
   }
-
+  #ig-isis-refineries-all-graphic {
+    margin: 0;
+  }
   main p,
   .market__text {
     font-size: 1.25em;
