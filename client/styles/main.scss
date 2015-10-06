@@ -24,7 +24,7 @@ body {
 
 main p,
 .market__text {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5rem;
   max-width: 600px;
   margin: 0.75em auto;
@@ -100,6 +100,14 @@ main p,
     letter-spacing: 0.02em;
     color: #9e2f50;
   }
+  
+  > h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #333333;
+  }
 
   > h2 {
     font-size: 1.5em;
@@ -149,11 +157,12 @@ main p,
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
 .mshow { @include oGridColumn((default:  hide, M:  12, L:  hide)); }
 .mlxlshow { @include oGridColumn((default:  hide, S: 12, M: 10, XL: 8)); ; @include oGridCenter;}
+.smuggling-mlxlshow { @include oGridColumn((default:  hide, M: 12, L: 10, XL: 8)); ; @include oGridCenter;}
 .sshow { @include oGridColumn((default:  hide, S: 12, M: hide));}
 .smshow { @include oGridColumn((default:  hide, S: 12, L: hide));}
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
 .showall { @include oGridColumn((default: 12)); }
-[data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
+// [data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
 
 .left {
   @include oGridColumn((default: 12, S: 7, M: 6, L: 4)); 
@@ -199,15 +208,26 @@ main p,
   @include oGridCenter;
 }
 
-#ig-isis-refineries-all-graphic,
+#ig-isis-refineries-all,
 [data-map="rebel-market"],
 [data-map="mosul-market"],
-[data-map="isis-market"] {
-  margin: 1em 0;
+[data-map="isis-market"],
+[data-map="smuggling"], {
+  margin: 2em 0;
 }
 
 [data-map="rebel-market"] {
   margin-bottom: 0;
+}
+
+.smuggling-icon {
+  width: 50px;
+  float: left;
+  margin-right: 5px;
+}
+
+.o-grid-row {
+  margin-bottom: 0.5em;
 }
 
 @include oGridRespondTo(L) {
@@ -246,7 +266,7 @@ main p,
       font-size: 1em;
     }
   }
-  #ig-isis-refineries-all-graphic {
+  #ig-isis-refineries-all {
     margin: 0;
   }
   main p,
