@@ -1,5 +1,9 @@
 import oHoverable from 'o-hoverable';
 import attachFastClick from 'fastclick';
+import marked from 'marked';
+
+const content = marked(spreadsheet.content[0].content);
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // make hover effects work on touch devices
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // put the HTML from the spreadsheet (originally markdown) into the story div
   var story = document.querySelector('.story');
-  story.innerHTML = spreadsheet.content[0].content;
+  story.innerHTML = content;
 
 
   // inside the story div, replace all the "MAP:" h1s with their corresponding map element
