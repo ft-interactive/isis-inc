@@ -116,7 +116,7 @@ main p,
     text-align: center;
     color: #333333;
     font-weight: 600;
-
+  
     &:before {
       display: block;
       background-size: 200px 60px;
@@ -134,8 +134,26 @@ main p,
       content: counter(sections);
       counter-increment: sections;
     }
+  }
+  > ul {
+    max-width: 600px;
+    margin: 1.5em auto;
+    padding: 10px 10px 10px 40px;
+    border-top: 1px solid oColorsGetPaletteColor('pink-tint4');
+    border-bottom: 1px solid oColorsGetPaletteColor('pink-tint4');
+    box-sizing: border-box;
 
-
+    > li {
+      list-style: list-item;
+      margin-bottom: 10px;
+      color: oColorsGetPaletteColor('grey-tint3');
+      font-size: 1.1rem;
+      line-height: 1.4em;
+      font-weight: 200;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
