@@ -1,6 +1,8 @@
 import oHoverable from 'o-hoverable';
 import attachFastClick from 'fastclick';
 import marked from 'marked';
+import storyItem from '../templates/_story_item.hbs';
+import storiesTemplate from '../templates/stories.hbs';
 
 const content = marked(spreadsheet.content[0].content);
 
@@ -13,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
   attachFastClick(document.body);
 
   // YOUR CODE HERE!
+
+  var credits = spreadsheet.credits
+  console.log(spreadsheet);
 
   // detach all the map elements from the page and keep them in an object
   var maps = {};
@@ -45,8 +50,17 @@ document.addEventListener('DOMContentLoaded', function () {
       h1.parentNode.removeChild(h1);
     }
   });
-});
 
+  var storiesHTML = storiesTemplate(spreadsheet.stories, {
+    partials: {
+      story_item: storyItem,
+    }
+  });
+  
+  document.querySelector('.stories__container').innerHTML = storiesHTML;
+  
+  document.querySelector('#byline').innerHTML = writeCredits(credits);
+});
 
 
 function select(selector, parent=document) {

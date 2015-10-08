@@ -62,6 +62,7 @@ main p,
 
 .story {
   counter-reset: sections;
+  padding: 0 10px;
   > h1 {
     font-family: FinancierDisplayWeb;
     font-weight: normal;
@@ -88,7 +89,6 @@ main p,
     font-weight: 200;
     text-align: center;
     margin-top: -4px;
-    margin-bottom: -1.3em;
     font-size: 0.875em;
   }
 
@@ -165,6 +165,7 @@ main p,
 .lshow,
 .mshow,
 .sshow,
+.smshow,
 .defaultshow,
 .mlxlshow {
   display: none;
@@ -231,7 +232,7 @@ main p,
 [data-map="mosul-market"],
 [data-map="isis-market"],
 [data-map="smuggling"], {
-  margin: 2em 0;
+  margin: 1.5em 0;
 }
 
 [data-map="rebel-market"] {
@@ -293,8 +294,22 @@ main p,
     line-height: 1.875rem;
   }
 
+}
+
+@include oGridRespondTo(M) {  
   .story > h2:before {
     font-size: 2rem;
+  }
+  .stories__story--container {
+    max-width: 167px;
+  }
+  .stories__story--image {
+    float: left;
+    margin-right: 0.5em;
+    width: 167px;
+    img {
+      width: 100%;
+    }
   }
 }
 @include oGridRespondTo($from: S, $until: M) {
@@ -306,6 +321,77 @@ main p,
       font-size: 1.25em;
       line-height: 1.5em;
     }
+  }
+}
+
+.stories__heading {
+  font-size: 1.25em;
+  font-weight: 200;
+  padding-bottom: 4px;
+}
+
+.stories__container {
+  background-color: oColorsGetPaletteColor('pink-tint1');
+  padding: 0 10px;
+  border-top: 1px solid oColorsGetPaletteColor('pink-tint3');
+  margin-bottom: 1em;
+}
+
+.stories__story--container {
+  padding: 10px 0;
+  a {
+    text-decoration: none;
+    color: #2e6e9e;
+  }
+}
+
+.stories__story--headline {
+  margin-bottom: 6px;
+}
+
+.stories__story--image {
+  float: left;
+  margin-right: 0.3em;
+  margin-bottom: 0.2em;
+  img {
+    width: 100px;
+  }
+}
+
+.stories__story--blurb {
+  color: oColorsGetPaletteColor('grey-tint4');
+  font-size: 0.9em;
+  line-height: 1.3em;
+  position: relative;
+  top: -4px;
+}
+
+#byline {
+  font-family: MetricWeb;
+  font-size: 14px;
+  font-weight: 200;
+  color: #74736c;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-top: 1px solid oColorsGetPaletteColor('pink-tint3');
+  padding-top: 8px;
+
+  div {
+    margin-bottom: 4px;
+  }
+
+  .by,
+  .source {
+    font-weight: 600;
+  }
+  a {
+    text-decoration: none;
+    color: #2e6e9e;
+    transition: color 0.3s;
+  }
+  a:hover {
+    color: #000000;
+    transition: color 0s;
   }
 }
 

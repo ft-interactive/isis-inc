@@ -46,7 +46,7 @@ gulp.task('html', done => {
     .on('end', () => {
       gulp.src('dist/**/*.html')
         .pipe($.smoosher())
-        .pipe($.minifyHtml())
+        .pipe($.htmlclean())
         .pipe(gulp.dest('dist'))
         .on('end', done);
     });
@@ -91,6 +91,7 @@ gulp.task('scripts', () => {
     buildFolder: '.tmp',
     js: './client/scripts/main.js',
     buildJs: 'scripts/main.bundle.js',
+    transforms: [require('hbsfy')],
   }).on('error', function (error) {
     console.error(error);
     this.emit('end');
