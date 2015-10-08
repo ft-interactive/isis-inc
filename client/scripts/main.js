@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // put the HTML from the spreadsheet (originally markdown) into the story div
-  var story = document.querySelector('.story');
+  var story = document.querySelector('.content-holder');
   story.innerHTML = content;
 
 

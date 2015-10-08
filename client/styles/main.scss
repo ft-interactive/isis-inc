@@ -60,9 +60,8 @@ main p,
   }
 }
 
-.story {
+.content-holder {
   counter-reset: sections;
-  padding: 0 10px;
   > h1 {
     font-family: FinancierDisplayWeb;
     font-weight: normal;
@@ -161,18 +160,8 @@ main p,
   margin-bottom: 1.5em;
 }
 
-.xlshow,
-.lshow,
-.mshow,
-.sshow,
-.smshow,
-.defaultshow,
-.mlxlshow {
-  display: none;
-  margin-bottom: 1.5em;
-  margin-top: 0.5em;
-}
 
+.content-holder { @include oGridColumn((default: 12)); padding: 0 5px;}
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
 .mshow { @include oGridColumn((default:  hide, M:  12, L:  hide)); }
 .mlxlshow { @include oGridColumn((default:  hide, S: 12, M: 10, XL: 8)); ; @include oGridCenter;}
@@ -189,6 +178,20 @@ main p,
     @include oGridPush(2); // outputs left: -33.333333333%;
   }
 }
+
+.xlshow,
+.lshow,
+.mshow,
+.sshow,
+.smshow,
+.defaultshow,
+.mlxlshow,
+.left {
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+  padding: 0 5px
+}
+
 .market__text {
   position: relative;
   top: -8px;  
@@ -203,6 +206,7 @@ main p,
   @include oGridRespondTo(L) {
     @include oGridPush(2); // outputs left: -33.333333333%;
   }
+  padding: 0 5px;
 }
 .rebels,
 .isis,
@@ -250,7 +254,7 @@ main p,
 }
 
 @include oGridRespondTo(L) {
-  .story {
+  .content-holder {
     > h1 {
       font-size: 3.75em;
       margin: 1.6rem 0;
@@ -263,7 +267,7 @@ main p,
   }
 }
  @include oGridRespondTo($from: M, $until: L) {
-  .story {
+  .content-holder {
     > h1 {
       font-size: 3.25em;
     }
@@ -275,7 +279,7 @@ main p,
 }
 
 @include oGridRespondTo($from: S) {
-  .story {
+  .content-holder {
 
     > h2 {
       margin: 1.75em 0 0.67em;
@@ -297,7 +301,7 @@ main p,
 }
 
 @include oGridRespondTo(M) {  
-  .story > h2:before {
+  .content-holder > h2:before {
     font-size: 2rem;
   }
   .stories__story--container {
@@ -313,7 +317,7 @@ main p,
   }
 }
 @include oGridRespondTo($from: S, $until: M) {
-  .story {
+  .content-holder {
     > h1 {
       font-size: 3em;
     }
