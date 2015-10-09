@@ -154,6 +154,27 @@ main p,
       }
     }
   }
+  > table {
+    max-width: 600px;
+    width: 100%;
+    color: oColorsGetPaletteColor('grey-tint5');
+    margin: 2em auto 1.5em;
+    font-size: 0.875em;
+    > thead > tr > th {
+        padding: 5px;
+        background: oColorsGetPaletteColor('pink-tint1');
+        border-bottom: 1px solid oColorsGetPaletteColor('pink-tint3');
+        font-weight: 600;
+    }
+    > tbody tr {
+      &:nth-child(even) {
+        background: oColorsGetPaletteColor('pink-tint1');
+      }
+      > td {
+        padding: 5px;
+      }
+    }
+  }
 }
 
 .o-grid-row {
