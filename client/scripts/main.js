@@ -32,14 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var story = document.querySelector('.content-holder');
   story.innerHTML = content;
 
-
   // inside the story div, replace all the "MAP:" h1s with their corresponding map element
   select('h1', story).forEach(function (h1) {
     if (h1.textContent.substring(0, 5) === 'MAP: ') {
       var slug = h1.textContent.substring(5);
       h1.parentNode.replaceChild(maps[slug], h1);
-
     }
+
+    if (h1.textContent.substring(0, 7) === 'SHARE: ') {
+      var slug = h1.textContent.substring(7);
+      h1.parentNode.replaceChild(maps[slug], h1);
+    }
+
     if (h1.textContent.substring(0, 8) === 'BULLET: ') {
       var bulletText = h1.textContent.substring(8);
       bullets.push(bulletText);
@@ -50,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
       h1.parentNode.removeChild(h1);
     }
   });
+
+  document.querySelector('.moresharelinks').innerHTML = maps.sharelinks.innerHTML;
 
   var storiesHTML = storiesTemplate(spreadsheet.stories, {
     partials: {
