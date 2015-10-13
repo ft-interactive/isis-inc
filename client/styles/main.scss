@@ -62,12 +62,22 @@ main p,
 
 .content-holder {
   counter-reset: sections;
+  > p a {
+    text-decoration: none;
+    color: #2e6e9e;
+    font-size: 1rem;
+    transition: color 0.3s;
+    &:hover {
+      color: #000000;
+      transition: color 0s;
+    }
+  }
   > h1 {
     font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
     font-weight: normal;
     text-align: center;
     font-size: 2.25em;
-    margin: 1.2rem 0;
+    margin: 1.2rem 0 0.6rem;
   }
 
   > p:first-of-type {
@@ -325,7 +335,7 @@ main p,
   .content-holder {
     > h1 {
       font-size: 3.75em;
-      margin: 1.6rem 0;
+      margin: 1.6rem 0 0.5rem;
     }
     > p:first-of-type {
       font-family: FinancierTextWeb;
@@ -369,10 +379,14 @@ main p,
 }
 
 @include oGridRespondTo(M) {  
-  .content-holder > h2:before {
-    font-size: 2rem;
+  .content-holder {
+    > p a {
+      font-size: 1.2rem;
+    }
+    > h2:before {
+      font-size: 2rem;
+    }
   }
-
   .stories__story--container {
     max-width: 167px;
   }
