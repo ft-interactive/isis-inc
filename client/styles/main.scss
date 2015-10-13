@@ -352,7 +352,7 @@ main p,
     > h1 {
       font-size: 3.25em;
     }
-    > p:first-of-type {
+    > p:nth-of-type(2) {
       font-size: 1.33em;
       line-height: 1.5em;
     }
