@@ -12,7 +12,7 @@ $o-grid-is-silent:  false;
 
 @import 'fonts';
 
-$o-grid-gutter: 20px;
+$o-grid-gutter: 30px;
 
 body {
 
@@ -377,6 +377,13 @@ main p,
   .market__text {
     font-size: 1.25em;
     line-height: 1.875rem;
+  }
+
+  .rebels,
+  .isis,
+  .isis-refineries,
+  .mosul {
+    padding: 0 5px 0 10px;
   }
 
 }
