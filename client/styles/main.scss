@@ -423,11 +423,11 @@ main p,
 
 /* share links */
 
-$twitter-logo: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-113 -103 40 40"><path fill="#a7a59b" d="M-81.862-89.786c-.82.357-1.7.6-2.624.708.943-.556 1.668-1.436 2.01-2.483-.883.51-1.862.88-2.902 1.08-.833-.87-2.02-1.42-3.337-1.42-2.523 0-4.57 2.01-4.57 4.49 0 .35.04.69.118 1.02-3.8-.19-7.167-1.978-9.42-4.69-.394.66-.62 1.43-.62 2.26 0 1.55.807 2.93 2.033 3.73-.75-.025-1.454-.228-2.07-.56v.054c0 2.176 1.573 3.99 3.667 4.4-.384.104-.79.16-1.204.16-.3 0-.58-.027-.86-.08.58 1.782 2.27 3.08 4.27 3.116-1.57 1.205-3.54 1.923-5.68 1.923-.37 0-.74-.026-1.09-.067 2.02 1.272 4.42 2.015 7 2.015 8.4 0 13-6.84 13-12.77 0-.194-.007-.39-.018-.58.89-.633 1.665-1.425 2.28-2.325z"/></svg>';
+$twitter-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMTMgLTEwMyA0MCA0MCI+PHBhdGggZmlsbD0iI2E3YTU5YiIgZD0iTS04MS44NjItODkuNzg2Yy0uODIuMzU3LTEuNy42LTIuNjI0LjcwOC45NDMtLjU1NiAxLjY2OC0xLjQzNiAyLjAxLTIuNDgzLS44ODMuNTEtMS44NjIuODgtMi45MDIgMS4wOC0uODMzLS44Ny0yLjAyLTEuNDItMy4zMzctMS40Mi0yLjUyMyAwLTQuNTcgMi4wMS00LjU3IDQuNDkgMCAuMzUuMDQuNjkuMTE4IDEuMDItMy44LS4xOS03LjE2Ny0xLjk3OC05LjQyLTQuNjktLjM5NC42Ni0uNjIgMS40My0uNjIgMi4yNiAwIDEuNTUuODA3IDIuOTMgMi4wMzMgMy43My0uNzUtLjAyNS0xLjQ1NC0uMjI4LTIuMDctLjU2di4wNTRjMCAyLjE3NiAxLjU3MyAzLjk5IDMuNjY3IDQuNC0uMzg0LjEwNC0uNzkuMTYtMS4yMDQuMTYtLjMgMC0uNTgtLjAyNy0uODYtLjA4LjU4IDEuNzgyIDIuMjcgMy4wOCA0LjI3IDMuMTE2LTEuNTcgMS4yMDUtMy41NCAxLjkyMy01LjY4IDEuOTIzLS4zNyAwLS43NC0uMDI2LTEuMDktLjA2NyAyLjAyIDEuMjcyIDQuNDIgMi4wMTUgNyAyLjAxNSA4LjQgMCAxMy02Ljg0IDEzLTEyLjc3IDAtLjE5NC0uMDA3LS4zOS0uMDE4LS41OC44OS0uNjMzIDEuNjY1LTEuNDI1IDIuMjgtMi4zMjV6Ii8+PC9zdmc+';
 
-$facebook-logo: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-114 -105 40 40"><path fill="#a7a59b" d="M-97-91.44v2.95h-2.17v3.62H-97v10.72h4.43v-10.72h3s.26-1.73.4-3.62h-3.38v-2.47c0-.37.5-.87.96-.87h2.43v-3.75h-3.28c-4.66 0-4.55 3.63-4.55 4.16z"/></svg>';
+$facebook-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMTQgLTEwNSA0MCA0MCI+PHBhdGggZmlsbD0iI2E3YTU5YiIgZD0iTS05Ny05MS40NHYyLjk1aC0yLjE3djMuNjJILTk3djEwLjcyaDQuNDN2LTEwLjcyaDNzLjI2LTEuNzMuNC0zLjYyaC0zLjM4di0yLjQ3YzAtLjM3LjUtLjg3Ljk2LS44N2gyLjQzdi0zLjc1aC0zLjI4Yy00LjY2IDAtNC41NSAzLjYzLTQuNTUgNC4xNnoiLz48L3N2Zz4=';
 
-$linked-in-logo: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-113 -103 40 40"><path fill="#a7a59b" d="M-103.332-91.33c.53.535 1.17.803 1.917.803.75 0 1.388-.268 1.917-.803.53-.535.795-1.183.795-1.942 0-.76-.265-1.404-.795-1.934s-1.17-.795-1.917-.795c-.748 0-1.387.26-1.917.79s-.795 1.17-.795 1.93.265 1.407.795 1.942zm4.236 17.583v-14.83h-4.588v14.83h4.588zm17.223 0v-9.39c0-1.923-.49-3.387-1.475-4.392-.983-1-2.294-1.5-3.933-1.5-.59 0-1.15.086-1.67.255-.52.17-.94.374-1.27.615-.33.24-.617.48-.86.72-.248.24-.42.442-.518.606l-.165.26v-1.996h-4.408v14.83h4.407v-7.785c0-1.06.24-1.88.72-2.46.484-.58 1.177-.867 2.084-.867 1.67 0 2.508 1.11 2.508 3.327v7.78h4.574z"/></svg>';
+$linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMTMgLTEwMyA0MCA0MCI+PHBhdGggZmlsbD0iI2E3YTU5YiIgZD0iTS0xMDMuMzMyLTkxLjMzYy41My41MzUgMS4xNy44MDMgMS45MTcuODAzLjc1IDAgMS4zODgtLjI2OCAxLjkxNy0uODAzLjUzLS41MzUuNzk1LTEuMTgzLjc5NS0xLjk0MiAwLS43Ni0uMjY1LTEuNDA0LS43OTUtMS45MzRzLTEuMTctLjc5NS0xLjkxNy0uNzk1Yy0uNzQ4IDAtMS4zODcuMjYtMS45MTcuNzlzLS43OTUgMS4xNy0uNzk1IDEuOTMuMjY1IDEuNDA3Ljc5NSAxLjk0MnptNC4yMzYgMTcuNTgzdi0xNC44M2gtNC41ODh2MTQuODNoNC41ODh6bTE3LjIyMyAwdi05LjM5YzAtMS45MjMtLjQ5LTMuMzg3LTEuNDc1LTQuMzkyLS45ODMtMS0yLjI5NC0xLjUtMy45MzMtMS41LS41OSAwLTEuMTUuMDg2LTEuNjcuMjU1LS41Mi4xNy0uOTQuMzc0LTEuMjcuNjE1LS4zMy4yNC0uNjE3LjQ4LS44Ni43Mi0uMjQ4LjI0LS40Mi40NDItLjUxOC42MDZsLS4xNjUuMjZ2LTEuOTk2aC00LjQwOHYxNC44M2g0LjQwN3YtNy43ODVjMC0xLjA2LjI0LTEuODguNzItMi40Ni40ODQtLjU4IDEuMTc3LS44NjcgMi4wODQtLjg2NyAxLjY3IDAgMi41MDggMS4xMSAyLjUwOCAzLjMyN3Y3Ljc4aDQuNTc0eiIvPjwvc3ZnPg==';
 
 @mixin visually-hidden {
   border: 0;
@@ -479,9 +479,9 @@ $linked-in-logo: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-113 -103 40 
     border-radius: 2px;
     background-size: $size $size;
 
-    &--twitter { background-image: url('data:image/svg+xml;utf8,' + $twitter-logo); }
-    &--facebook { background-image: url('data:image/svg+xml;utf8,' + $facebook-logo); }
-    &--linked-in { background-image: url('data:image/svg+xml;utf8,' + $linked-in-logo); }
+    &--twitter { background-image: url('data:image/svg+xml;base64,' + $twitter-logo); }
+    &--facebook { background-image: url('data:image/svg+xml;base64,' + $facebook-logo); }
+    &--linked-in { background-image: url('data:image/svg+xml;base64,' + $linked-in-logo); }
 
     &:hover { background-color: oColorsGetPaletteColor('pink-tint2'); }
     &:active { background-color: oColorsGetPaletteColor('pink-tint3'); }
