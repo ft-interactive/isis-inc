@@ -62,16 +62,20 @@ main p,
 
 .content-holder {
   counter-reset: sections;
-  > p a {
-    text-decoration: none;
-    color: #2e6e9e;
-    font-size: 1rem;
-    transition: color 0.3s;
-    &:hover {
-      color: #000000;
-      transition: color 0s;
+  > p:first-of-type {
+      text-align: center;
+    > a {
+      text-decoration: none;
+      color: #2e6e9e;
+      font-size: 1rem;
+      transition: color 0.3s;
+      &:hover {
+        color: #000000;
+        transition: color 0s;
+      }
     }
   }
+
   > h1 {
     font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
     font-weight: normal;
@@ -80,10 +84,9 @@ main p,
     margin: 1.2rem 0 0.6rem;
   }
 
-  > p:first-of-type {
+  > p:nth-of-type(2) {
     max-width: 800px;
     text-align: center;
-    margin: 0 auto;
     font-family: oFontsGetFontFamilyWithFallbacks(FinancierTextWeb);
     font-size: 1.2em;
     line-height: 1.35em;
@@ -337,7 +340,7 @@ main p,
       font-size: 3.75em;
       margin: 1.6rem 0 0.5rem;
     }
-    > p:first-of-type {
+    > p:nth-of-type(2) {
       font-family: FinancierTextWeb;
       font-size: 1.5rem;
       line-height: 2rem;
@@ -380,7 +383,7 @@ main p,
 
 @include oGridRespondTo(M) {  
   .content-holder {
-    > p a {
+    > p:first-of-type a {
       font-size: 1.2rem;
     }
     > h2:before {
@@ -404,7 +407,7 @@ main p,
     > h1 {
       font-size: 3em;
     }
-   > p:first-of-type {
+   > p:nth-of-type(2) {
       font-size: 1.25em;
       line-height: 1.5em;
     }
