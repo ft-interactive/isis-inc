@@ -203,10 +203,11 @@ main p,
 .content-holder { @include oGridColumn((default: 12)); padding: 0 5px;}
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
 .mshow { @include oGridColumn((default:  hide, M:  12, L:  hide)); }
-.mlxlshow { @include oGridColumn((default:  hide, S: 12, M: 10, XL: 8)); ; @include oGridCenter;}
-.smuggling-mlxlshow { @include oGridColumn((default:  hide, M: 12, L: 10, XL: 8)); ; @include oGridCenter;}
+.mlxlshow { @include oGridColumn((default:  hide, S: 12, M: 10, XL: 8)); @include oGridCenter;}
+.smuggling-mlxlshow { @include oGridColumn((default:  hide, L: 12)); @include oGridCenter; min-width: 600px;}
 .sshow { @include oGridColumn((default:  hide, S: 12, M: hide));}
 .smshow { @include oGridColumn((default:  hide, S: 12, L: hide));}
+.smuggling-smshow { @include oGridColumn((default:  hide, S: 12, M: 10, L: hide)); @include oGridCenter;}
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
 .showall { @include oGridColumn((default: 12)); }
 // [data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
