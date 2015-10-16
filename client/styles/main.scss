@@ -22,6 +22,22 @@ body {
   @include oColorsFor(page, background);
 }
 
+.enhanced > body {
+  > div,
+  > main,
+  > footer {
+    display: none;
+  }
+
+  &.ready {
+    > div,
+    > main,
+    > footer {
+      display: block;
+    }
+  }
+}
+
 main p,
 .market__text {
   font-size: 1.2rem;
