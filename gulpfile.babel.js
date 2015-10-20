@@ -154,6 +154,10 @@ gulp.task('build', done => {
   done);
 });
 
+gulp.task('monitor', function() {
+  gulp.watch('./client/*', ['build']);
+});
+
 // task to deploy to the interactive server
 gulp.task('deploy', igdeploy.bind(null, {
   src: 'dist',
