@@ -540,9 +540,19 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
 }
 
 .o-footer {
-  border-top: 0;
+  color: oColorsGetPaletteColor('grey-tint5');
+}
+.o-footer__copyright {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.o-footer__pearson {
-  background-color: oColorsGetPaletteColor('pink-tint3');
+.o-footer__col {
+  font-weight: 200;
+}
+
+.o-footer__link > a {
+  font-weight: 200;
 }

@@ -33,5 +33,8 @@
   "scripts": {
     "serve": "nodemon --watch gulpfile.js --watch .scss-lint.yml --exec 'gulp clean && gulp serve'",
     "test": "eslint . && gulp build"
+  },
+  "dependencies": {
+    "node-sass": "^3.3.3"
   }
 }
