@@ -3,11 +3,14 @@ import attachFastClick from 'fastclick';
 import marked from 'marked';
 import storyItem from '../templates/_story_item.hbs';
 import storiesTemplate from '../templates/stories.hbs';
+import Share from './share.js';
 
 const content = marked(spreadsheet.content[0].content);
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  
   // make hover effects work on touch devices
   oHoverable.init();
 

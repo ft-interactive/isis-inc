@@ -1,75 +1,82 @@
 var socialUrls = {
-	wechat: "http://www.ftchinese.com/m/corp/qrshare.html?&amp;url={{url}}&amp;title={{title}}&amp;ccode=2C1A1408",
-	weibo: "http://service.weibo.com/share/share.php?&amp;url={{url}}&amp;title={{summary}}&amp;searchPic=true&amp;lang=zh_cn&amp;appkey=4221537403",
-	linkedin: "http://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}&amp;title={{title}}&amp;summary={{summary}}&amp;source=FT中文网",
-};
-var socialNames = {
-	wechat: "微信",
-	weibo: "微博",
-	linkedin: "LinkedIn" 
+	wechat: "http://www.ftchinese.com/m/corp/qrshare.html?title={{title}}&url={{url}}&ccode=2C1A1408",
+	weibo: "http://service.weibo.com/share/share.php?&appkey=4221537403&url={{url}}&title=【{{title}}】{{summary}}&ralateUid=1698233740&source=FT中文网&sourceUrl=http://www.ftchinese.com/&content=utf8&searchPic=false&ccode=2G139005",
+	linkedin: "http://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{title}}&summary={{summary}}&source=FT中文网",
 };
 
+/*
+  *@object share used as prototype
+  */
 var Share = {
-	init: function($rootEl, config) {
-		this.$rootEl = $rootEl.length > 0 ? $rootEl : $('body');
+	init: function(rootEl, config) {
+		if (!rootEl) {
+			this.rootEl = document.body;
+		} else if (!(rootEl instanceof HTMLElement)) {
+			this.rootEl = document.querySelector(rootEl);
+		}
 		this.config = config;
 
-		if (this.$rootEl.children().length === 0) {
+		if (this.rootEl.children.length === 0) {
 			if (!this.config) {
 				this.config = {};
-				this.config.links = this.$rootEl.attr('data-o-share-links') ? this.$rootEl.attr('data-o-share-links').split(' ') : [];
+				this.config.networks = this.rootEl.hasAttribute('data-o-share-links') ? this.rootEl.getAttribute('data-o-share-links').split(' ') : [];
 				this.config.url = window.location.href || '';
-				this.config.title = this.$rootEl.attr('data-o-share-title') || '';
-				this.config.summary = this.$rootEl.attr('data-o-share-summary') || '';
+				this.config.title = this.rootEl.getAttribute('data-o-share-title') || '';
+				this.config.summary = this.rootEl.getAttribute('data-o-share-summary') || '';
 			}
+			this.render();
 		}
 	},
 
 	render: function() {
-		var $ul = $('<ul/>', {
-			'class': 'header-social-list'
-		});
+		var ulElement = document.createElement('ul');
 
-		for (var i = 0; i < this.config.links.length; i++) {
-			var $li = $('<li/>');
-			var $a = $('<a/>', {
-				'href': this.generateSocialUrl(this.config.links[i]),
-				'class': 'icons-' + this.config.links[i]
-			}).text(this.getSocialName(this.config.links[i]));
-			$li.append($a);
-			$ul.append($li);
+		for (var i = 0; i < this.config.networks.length; i++) {
+			var network = this.config.networks[i];
+			var networkName = this.config.networkName[network];
+
+			var liElement = document.createElement('li');
+			var aElement = document.createElement('a');
+			aElement.href = this.generateSocialUrl(network);
+			aElement.target = '_blank';
+			aElement.classList.add('share-links__link');
+			aElement.classList.add('share-links__link--' + network);
+			
+			var aText = document.createTextNode(networkName);
+			aElement.appendChild(aText);
+			liElement.appendChild(aElement);
+			ulElement.appendChild(liElement);
 		}
 
-		this.$rootEl.append($ul);
+		this.rootEl.appendChild(ulElement);
 	},
 
 	generateSocialUrl: function(socialNetwork) {
 		var templateUrl = socialUrls[socialNetwork];
-		templateUrl = templateUrl.replace('{{url}}', this.config.Url)
+		templateUrl = templateUrl.replace('{{url}}', encodeURIComponent(this.config.url))
 			.replace('{{title}}', encodeURIComponent(this.config.title))
 			.replace('{{summary}}', encodeURIComponent(this.config.summary));
 		return templateUrl;
-	},
-
-	getSocialName: function(socialNetwork) {
-		return socialNames[socialNetwork];
 	}
-
 };
-
 
 var config = {
 	url: window.location.href,
 	title: (function() {
-		return $('title').eq(0).text();
+		return document.getElementsByTagName('title')[0].firstChild.nodeValue;
 	})(),
 	summary: (function() {
-		return $('.header-social-panel').attr('data-o-share-summary');
+		var descElement = document.querySelector('meta[property="og:description"]');
+		return descElement.hasAttribute('content') ? descElement.getAttribute('content') : '';
 	})(),
-	links: ['wechat', 'weibo', 'linkedin']
+	networks: ['wechat', 'weibo', 'linkedin'],
+	networkName: {
+		wechat: "微信",
+		weibo: "微博",
+		linkedin: "LinkedIn" 
+	}
+
 };
 
 var shareLinks = Object.create(Share);
-shareLinks.init($('.header-social-panel'));
-shareLinks.render();
-
+shareLinks.init('.header-social-panel', config);
