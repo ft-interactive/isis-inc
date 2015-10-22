@@ -155,7 +155,7 @@ gulp.task('build', done => {
 });
 
 gulp.task('monitor', function() {
-  gulp.watch('./client/*', ['build']);
+  gulp.watch('./client/**/*', ['build']);
 });
 
 // task to deploy to the interactive server
