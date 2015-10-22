@@ -79,4 +79,4 @@ var config = {
 };
 
 var shareLinks = Object.create(Share);
-shareLinks.init('.header-social-panel', config);
+shareLinks.init('.share-links', config);
