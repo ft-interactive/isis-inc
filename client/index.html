@@ -52,6 +52,39 @@
     <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','/index.php/jsapi/analytics','ga');
+ga('create', 'UA-1608715-1');
+ga('require', 'displayfeatures');
+try {
+trackerNew();
+trackAdClick();
+}catch(err){
+ga('send', 'pageview');
+}
+</script>
+<!-- End Google Analytics -->
+
+<!-- FTC Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['FtcAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '/log/analytics.js', 'fa');
+    fa('create', 'UA-XXXX-Y', { 'alwaysSendReferrer': true });   // Replace with your property ID.
+    if (window.gAutoStart === undefined) {fa('send', 'pageview');}
+</script>
+<!-- End FTC Analytics -->
      </head>
   <body>
     <header id="ft-header">
@@ -2881,5 +2914,6 @@
       }  
     });
     </script>
+<script type="text/javascript" src="http://static.ftchinese.com/js/log.js?v=6"></script>
   </body>
 </html>

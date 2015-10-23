@@ -15,7 +15,7 @@ var socialUrls = {
 };
 
 /*
-  *@object share used as prototype
+  *@object Share used as prototype
   */
 var Share = {
 	init: function(rootEl, config) {
