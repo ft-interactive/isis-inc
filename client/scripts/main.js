@@ -9,7 +9,7 @@ const content = marked(spreadsheet.content[0].content);
 
 document.addEventListener('DOMContentLoaded', function () {
   // make hover effects work on touch devices
-  oHoverable.init();
+  oHoverable.init('.share-links');
 
   // remove the 300ms tap delay on mobile browsers
   attachFastClick(document.body);

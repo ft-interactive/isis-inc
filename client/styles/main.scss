@@ -491,17 +491,39 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
 
   &__link {
     $size: 40px;
-
+    position: relative;
     display: block;
     width: $size;
     height: $size;
-    border-radius: 2px;
-    background-size: $size $size;
+    border-radius: 20px;
+    /* background-size: $size $size; */
+    
+    text-indent: -999em;
+    background-image: url('../images/share-icon.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
 
-    &--twitter { background-image: url('data:image/svg+xml;base64,' + $twitter-logo); }
+    /* &--twitter { background-image: url('data:image/svg+xml;base64,' + $twitter-logo); }
     &--facebook { background-image: url('data:image/svg+xml;base64,' + $facebook-logo); }
-    &--linked-in { background-image: url('data:image/svg+xml;base64,' + $linked-in-logo); }
+    &--linked-in { background-image: url('data:image/svg+xml;base64,' + $linked-in-logo); } */
+    
+    &--linkedin {
+    background-position: 0 0; }
+    &--wechat {
+    background-position: 0px -44px; }
+    &--weibo {
+    background-position: 0px -88px; }
 
+    &:hover::before {
+      content: "";
+      background-color: rgba(0, 0, 0, .2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
     &:hover { background-color: oColorsGetPaletteColor('pink-tint2'); }
     &:active { background-color: oColorsGetPaletteColor('pink-tint3'); }
 
@@ -509,6 +531,13 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
   }
 
 }
+
+.o-share__action--linkedin a{
+  background-position: 0 0; }
+.o-share__action--wechat a{
+  background-position: 0 -28px; }
+.o-share__action--weibo a{
+  background-position: 0 -56px; }
 
 #byline {
   font-family: MetricWeb;

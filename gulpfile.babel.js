@@ -154,9 +154,6 @@ gulp.task('build', done => {
   done);
 });
 
-gulp.task('monitor', function() {
-  gulp.watch('./client/**/*', ['build']);
-});
 
 // task to deploy to the interactive server
 gulp.task('deploy', igdeploy.bind(null, {
@@ -165,3 +162,45 @@ gulp.task('deploy', igdeploy.bind(null, {
   dest: 'sites/2015/isis-oil',
   baseURL: 'http://ig.ft.com/',
 }));
+
+// Added by FTC
+//Resize icons and then make a sprite
+//gulp.sprtesmith cannot read streams. intermediary files have to be generated.
+var imageResize = require('gulp-image-resize');
+var spritesmith = require('gulp.spritesmith');
+var merge = require('merge-stream');
+
+gulp.task('monitor', function() {
+  gulp.watch('./client/**/*', ['build']);
+});
+
+gulp.task('resize', function() {
+  return gulp.src('icons/*.png')
+    .pipe(imageResize({
+      width: 40,
+      crop:false
+    }))
+    .pipe(gulp.dest('./sprite/'));
+});
+
+gulp.task('clearimg', function() {
+  del(['./sprite/**']);
+});
+
+gulp.task('sprite', ['clearimg', 'resize'], function() {
+  var spriteData = gulp.src('./sprite/*.png')
+    .pipe(spritesmith({
+      imgName: 'share-icon.png',
+      imgPath: '../images/share-icon.png',
+      cssName: 'share-icon.css',
+      algorithm: 'top-down',
+      padding: 4
+    }));
+  var imgStream = spriteData.img
+    .pipe(gulp.dest('./client/images/'));
+
+  var cssStream = spriteData.css
+    .pipe(gulp.dest('./client/styles/'));
+
+  return merge(imgStream, cssStream);
+});

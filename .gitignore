@@ -3,4 +3,6 @@
 /dist/
 /.tmp/
 /.sass-cache/
+/icons/
+/sprite/
 index.js
