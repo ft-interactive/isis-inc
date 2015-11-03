@@ -127,7 +127,7 @@ main p,
 
   > h3 {
     text-align: center;
-    font-family: FinancierDisplayWeb;
+    font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
     font-style: italic;
     font-size: 3em;
     letter-spacing: 0.02em;
@@ -226,6 +226,8 @@ main p,
 .smuggling-smshow { @include oGridColumn((default:  hide, S: 12, M: 10, L: hide)); @include oGridCenter;}
 .defaultshow { @include oGridColumn((default: 12, S: hide)); }
 .showall { @include oGridColumn((default: 12)); }
+.story-promo { @include oGridColumn((default:  12)); @include oGridCenter;}
+.more-share-holder {@include oGridColumn((default: 12, S: 12, M: 10, L: 8)); @include oGridCenter;}
 // [data-map='closeup'] .showall, [data-map='smuggling'] .showall { @include oGridColumn((default: 12, M:10, L:8)); @include oGridCenter;}
 
 .left {
@@ -353,93 +355,6 @@ main p,
   top: -4px;
 }
 
-@include oGridRespondTo(L) {
-  .content-holder {
-    > h1 {
-      font-size: 3.75em;
-      margin: 1.6rem 0 0.5rem;
-    }
-    > p:nth-of-type(2) {
-      font-family: FinancierTextWeb;
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-}
- @include oGridRespondTo($from: M, $until: L) {
-  .content-holder {
-    > h1 {
-      font-size: 3.25em;
-    }
-    > p:nth-of-type(2) {
-      font-size: 1.33em;
-      line-height: 1.5em;
-    }
-  }
-}
-
-@include oGridRespondTo($from: S) {
-  .content-holder {
-
-    > h2 {
-      margin: 1.75em 0 0.67em;
-      font-size: 1.75em;
-    }
-    > h6 {
-      font-size: 1em;
-    }
-  }
-  #ig-isis-refineries-all {
-    margin: 0;
-  }
-  main p,
-  .market__text {
-    font-size: 1.25em;
-    line-height: 1.875rem;
-  }
-
-  .rebels,
-  .isis,
-  .isis-refineries,
-  .mosul {
-    padding: 0 5px 0 10px;
-  }
-
-}
-
-@include oGridRespondTo(M) {  
-  .content-holder {
-    > p:first-of-type a {
-      font-size: 1.2rem;
-    }
-    > h2:before {
-      font-size: 2rem;
-    }
-  }
-  .stories__story--container {
-    max-width: 167px;
-  }
-  .stories__story--image {
-    float: left;
-    margin-right: 0.5em;
-    width: 167px;
-    > img {
-      width: 167px;
-    }
-  }
-}
-@include oGridRespondTo($from: S, $until: M) {
-  .content-holder {
-    > h1 {
-      font-size: 3em;
-    }
-   > p:nth-of-type(2) {
-      font-size: 1.25em;
-      line-height: 1.5em;
-    }
-  }
-}
-
 /* share links */
 
 $twitter-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMTMgLTEwMyA0MCA0MCI+PHBhdGggZmlsbD0iI2E3YTU5YiIgZD0iTS04MS44NjItODkuNzg2Yy0uODIuMzU3LTEuNy42LTIuNjI0LjcwOC45NDMtLjU1NiAxLjY2OC0xLjQzNiAyLjAxLTIuNDgzLS44ODMuNTEtMS44NjIuODgtMi45MDIgMS4wOC0uODMzLS44Ny0yLjAyLTEuNDItMy4zMzctMS40Mi0yLjUyMyAwLTQuNTcgMi4wMS00LjU3IDQuNDkgMCAuMzUuMDQuNjkuMTE4IDEuMDItMy44LS4xOS03LjE2Ny0xLjk3OC05LjQyLTQuNjktLjM5NC42Ni0uNjIgMS40My0uNjIgMi4yNiAwIDEuNTUuODA3IDIuOTMgMi4wMzMgMy43My0uNzUtLjAyNS0xLjQ1NC0uMjI4LTIuMDctLjU2di4wNTRjMCAyLjE3NiAxLjU3MyAzLjk5IDMuNjY3IDQuNC0uMzg0LjEwNC0uNzkuMTYtMS4yMDQuMTYtLjMgMC0uNTgtLjAyNy0uODYtLjA4LjU4IDEuNzgyIDIuMjcgMy4wOCA0LjI3IDMuMTE2LTEuNTcgMS4yMDUtMy41NCAxLjkyMy01LjY4IDEuOTIzLS4zNyAwLS43NC0uMDI2LTEuMDktLjA2NyAyLjAyIDEuMjcyIDQuNDIgMi4wMTUgNyAyLjAxNSA4LjQgMCAxMy02Ljg0IDEzLTEyLjc3IDAtLjE5NC0uMDA3LS4zOS0uMDE4LS41OC44OS0uNjMzIDEuNjY1LTEuNDI1IDIuMjgtMi4zMjV6Ii8+PC9zdmc+';
@@ -459,22 +374,26 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
   width: 1px;
 }
 
-.article-header__share-links,
-.moresharelinks {
+.article-header__share-links {
   text-align: center;
   margin-top: 1.5em;
 }
 
-.moresharelinks:before {
-  width: 60px;
-  border-top: 1px solid oColorsGetPaletteColor('pink-tint4');
-  content: '';
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+.moresharelinks {
+  width: 600px;
+  margin: 2.5em auto 1em;
+   &:before {
+    width: 60px;
+    border-top: 1px solid oColorsGetPaletteColor('pink-tint4');
+    content: '';
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+  }
 }
 
 .share-links {  
+  margin-left: 10px;
   > p { @include visually-hidden; }
 
   > ul {
@@ -568,6 +487,57 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
   }
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background: oColorsGetPaletteColor('pink-tint3');
+    max-width: 600px;
+    margin: 2.2em auto 1.6em;
+}
+
+.story-promo {
+  text-decoration: none;
+  background: #f6e9d8;
+  color: oColorsGetPaletteColor('grey-tint5');
+  padding: 10px 16px 10px;
+  max-width: 600px;
+  font-size: 1.75rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  font-family: oFontsGetFontFamilyWithFallbacks(MetricWeb);
+  margin-top: 1.5em;
+  & > span.kicker {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: oColorsGetPaletteColor('claret');
+  }
+  & > span.link {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    &:after {
+      content: " ";
+      background: url('https://image.webservices.ft.com/v1/images/raw/fticon:arrow-right?height=44&tint=333333,333333&source=ig_wrr') no-repeat center center;
+      background-size: 20px 20px;
+      position: absolute;
+      bottom: 12px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      margin: 0 7px 4px 0;
+    }
+  }
+}
+
+.story-promo:hover,
+.story-promo:hover > .link {
+  text-decoration: underline;
+}
+
 .o-footer {
   color: oColorsGetPaletteColor('grey-tint5');
 }
@@ -584,4 +554,99 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
 
 .o-footer__link > a {
   font-weight: 200;
+}
+
+@include oGridRespondTo(L) {
+  .content-holder {
+    > h1 {
+      font-size: 3.75em;
+      margin: 1.6rem 0 0.5rem;
+    }
+    > p:nth-of-type(2) {
+      font-family: FinancierTextWeb;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+ @include oGridRespondTo($from: M, $until: L) {
+  .content-holder {
+    > h1 {
+      font-size: 3.25em;
+    }
+    > p:nth-of-type(2) {
+      font-size: 1.33em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@include oGridRespondTo($from: S) {
+  .content-holder {
+
+    > h2 {
+      margin: 1.75em 0 0.67em;
+      font-size: 1.75em;
+    }
+    > h6 {
+      font-size: 1em;
+    }
+  }
+  #ig-isis-refineries-all {
+    margin: 0;
+  }
+  main p,
+  .market__text {
+    font-size: 1.25em;
+    line-height: 1.875rem;
+  }
+
+  .rebels,
+  .isis,
+  .isis-refineries,
+  .mosul {
+    padding: 0 5px 0 10px;
+  }
+
+}
+
+@include oGridRespondTo(M) {  
+  .share-links {  
+    margin-left: 0;
+  }
+  .moresharelinks {
+    &:before {
+      margin-left: 0;
+    }
+  }
+  .content-holder {
+    > p:first-of-type a {
+      font-size: 1.2rem;
+    }
+    > h2:before {
+      font-size: 2rem;
+    }
+  }
+  .stories__story--container {
+    max-width: 167px;
+  }
+  .stories__story--image {
+    float: left;
+    margin-right: 0.5em;
+    width: 167px;
+    > img {
+      width: 167px;
+    }
+  }
+}
+@include oGridRespondTo($from: S, $until: M) {
+  .content-holder {
+    > h1 {
+      font-size: 3em;
+    }
+   > p:nth-of-type(2) {
+      font-size: 1.25em;
+      line-height: 1.5em;
+    }
+  }
 }
