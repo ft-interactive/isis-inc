@@ -180,21 +180,21 @@ gulp.task('resize', function() {
       width: 40,
       crop:false
     }))
-    .pipe(gulp.dest('./sprite/'));
+    .pipe(gulp.dest('./icons/.tmp'));
 });
 
-gulp.task('clearimg', function() {
-  del(['./sprite/**']);
+gulp.task('clearsprite', function() {
+  del(['./icons/.tmp/**']);
 });
 
-gulp.task('sprite', ['clearimg', 'resize'], function() {
-  var spriteData = gulp.src('./sprite/*.png')
+gulp.task('sprite', ['clearsprite', 'resize'], function() {
+  var spriteData = gulp.src('./icons/.tmp/*.png')
     .pipe(spritesmith({
-      imgName: 'share-icon.png',
-      imgPath: '../images/share-icon.png',
-      cssName: 'share-icon.css',
+      imgName: 'sprite.png',
+      cssName: 'sprite.css',
       algorithm: 'top-down',
-      padding: 4
+      padding: 4,
+      cssTemplate: 'icons/template.spritecss.handlebars'
     }));
   var imgStream = spriteData.img
     .pipe(gulp.dest('./client/images/'));

@@ -11,5 +11,8 @@
   },
   "resolutions": {
     "o-hoverable": "~3.0.0"
+  },
+  "devDependencies": {
+    "ftc-share": "~0.0.3"
   }
 }
