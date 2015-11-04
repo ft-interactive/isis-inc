@@ -166,9 +166,9 @@ gulp.task('deploy', igdeploy.bind(null, {
 // Added by FTC
 //Resize icons and then make a sprite
 //gulp.sprtesmith cannot read streams. intermediary files have to be generated.
-var imageResize = require('gulp-image-resize');
-var spritesmith = require('gulp.spritesmith');
 var merge = require('merge-stream');
+var config = require('./config');
+var sequence = require('gulp-sequence');
 
 gulp.task('monitor', function() {
   gulp.watch('./client/**/*', ['build']);
@@ -206,4 +206,23 @@ gulp.task('sprite', ['clearsprite', 'resize'], function() {
 });
 
 //deploy to ftc
+//Go test server
+gulp.task('dist:test', /*['build'],*/ function() {
+  return gulp.src('dist/**/*')
+    .pipe(gulp.dest(config.dest.testServer));
+});
 
+//Go Online. Run `gulp dist`
+gulp.task('html:dist', function() {
+  return gulp.src('dist/index.html')
+    .pipe(prefix(config.prefixUrl))
+    .pipe(rename(config.htmlName))
+    .pipe(gulp.dest(config.dest.distHtml));
+});
+
+gulp.task('copy:dist', function() {
+  return gulp.src(['dist/**/*', '!dist/*.html'])
+    .pipe(gulp.dest(config.dest.distAssets));
+});
+
+gulp.task('dist', sequence('build', ['html:dist', 'copy:dist']));
