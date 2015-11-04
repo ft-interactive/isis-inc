@@ -4,7 +4,7 @@ $o-grid-is-silent:  false;
 @import "o-assets/main";
 
 @include oAssetsSetModulePaths((
-  'o-footer': 'https://build.origami.ft.com/files/o-footer@^3.1.0'
+  'o-footer': '//build.origami.ft.com/files/o-footer@^3.1.0'
 ));
 
 @import 'o-grid/main';
@@ -126,12 +126,21 @@ main p,
     }
 
   > h3 {
-    text-align: center;
-    font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
-    font-style: italic;
-    font-size: 3em;
+    font-family: oFontsGetFontFamilyWithFallbacks(MetricWeb);
+    font-size: 1.7em;
     letter-spacing: 0.02em;
-    color: #9e2f50;
+    color: oColorsGetPaletteColor('grey-tint5');
+    width: 600px;
+    margin: 1em auto 0;
+    font-weight: 200;
+    &:before {
+      width: 60px;
+      border-top: 1px solid oColorsGetPaletteColor('pink-tint4');
+      content: '';
+      display: block;
+      text-align: left;
+      margin-bottom: 20px;
+    }
   }
   
   > h4 {
