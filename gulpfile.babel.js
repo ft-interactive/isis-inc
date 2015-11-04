@@ -176,7 +176,7 @@ gulp.task('monitor', function() {
 
 gulp.task('resize', function() {
   return gulp.src('icons/*.png')
-    .pipe(imageResize({
+    .pipe($.imageResize({
       width: 40,
       crop:false
     }))
@@ -189,7 +189,7 @@ gulp.task('clearsprite', function() {
 
 gulp.task('sprite', ['clearsprite', 'resize'], function() {
   var spriteData = gulp.src('./icons/.tmp/*.png')
-    .pipe(spritesmith({
+    .pipe($.spritesmith({
       imgName: 'sprite.png',
       cssName: 'sprite.css',
       algorithm: 'top-down',
@@ -204,3 +204,6 @@ gulp.task('sprite', ['clearsprite', 'resize'], function() {
 
   return merge(imgStream, cssStream);
 });
+
+//deploy to ftc
+
