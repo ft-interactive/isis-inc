@@ -158,6 +158,6 @@ gulp.task('build', done => {
 gulp.task('deploy', igdeploy.bind(null, {
   src: 'dist',
   destPrefix: '/var/opt/customer/apps/interactive.ftdata.co.uk/var/www/html',
-  dest: 'sites/2015/isis-oil',
+  dest: 'sites/2015/isis-inc',
   baseURL: 'http://ig.ft.com/',
 }));
