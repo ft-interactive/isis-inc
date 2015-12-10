@@ -1,0 +1,203 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'i' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose node symlink /usr/local/bin/node
+5 verbose readDependencies loading dependencies from /Users/robin.kwong/isis-inc/package.json
+6 verbose install where, deps [ '/Users/robin.kwong/isis-inc',
+6 verbose install   [ 'node-sass',
+6 verbose install     'auto-plug',
+6 verbose install     'babel',
+6 verbose install     'babel-core',
+6 verbose install     'babel-eslint',
+6 verbose install     'bower',
+6 verbose install     'browser-sync',
+6 verbose install     'debowerify',
+6 verbose install     'del',
+6 verbose install     'eslint',
+6 verbose install     'fastclick',
+6 verbose install     'gulp',
+6 verbose install     'gulp-htmlclean',
+6 verbose install     'gulp-if',
+6 verbose install     'gulp-imagemin',
+6 verbose install     'gulp-minify-css',
+6 verbose install     'gulp-smoosher',
+6 verbose install     'gulp-uglify',
+6 verbose install     'gulp-useref',
+6 verbose install     'gulp-util',
+6 verbose install     'handlebars',
+6 verbose install     'hbsfy',
+6 verbose install     'igdeploy',
+6 verbose install     'marked',
+6 verbose install     'nodemon',
+6 verbose install     'origami-build-tools',
+6 verbose install     'run-sequence' ] ]
+7 verbose install where, peers [ '/Users/robin.kwong/isis-inc', [] ]
+8 verbose installManyTop reading for lifecycle /Users/robin.kwong/isis-inc/package.json
+9 info preinstall @
+10 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/auto-plug/package.json
+11 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/babel/package.json
+12 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/babel-core/package.json
+13 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/babel-eslint/package.json
+14 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/bower/package.json
+15 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/browser-sync/package.json
+16 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/debowerify/package.json
+17 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/del/package.json
+18 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/eslint/package.json
+19 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/fastclick/package.json
+20 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp/package.json
+21 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-htmlclean/package.json
+22 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-if/package.json
+23 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-imagemin/package.json
+24 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-minify-css/package.json
+25 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-smoosher/package.json
+26 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-uglify/package.json
+27 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-useref/package.json
+28 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/gulp-util/package.json
+29 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/handlebars/package.json
+30 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/hbsfy/package.json
+31 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/igdeploy/package.json
+32 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/marked/package.json
+33 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/node-sass/package.json
+34 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/nodemon/package.json
+35 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/origami-build-tools/package.json
+36 verbose installManyTop reading scoped package data from /Users/robin.kwong/isis-inc/node_modules/run-sequence/package.json
+37 info package.json babel-core@5.8.34 No README data
+38 info package.json debowerify@1.3.1 license should be a valid SPDX license expression
+39 info package.json fastclick@1.0.6 No license field.
+40 info package.json gulp-if@1.2.5 No license field.
+41 info package.json igdeploy@0.1.0 No repository field.
+42 verbose readDependencies loading dependencies from /Users/robin.kwong/isis-inc/package.json
+43 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/auto-plug/package.json
+44 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/babel/package.json
+45 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/babel-core/package.json
+46 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/babel-eslint/package.json
+47 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/bower/package.json
+48 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/browser-sync/package.json
+49 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/debowerify/package.json
+50 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/del/package.json
+51 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/eslint/package.json
+52 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/fastclick/package.json
+53 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp/package.json
+54 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-htmlclean/package.json
+55 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-if/package.json
+56 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-imagemin/package.json
+57 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-minify-css/package.json
+58 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-smoosher/package.json
+59 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-uglify/package.json
+60 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-useref/package.json
+61 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/gulp-util/package.json
+62 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/handlebars/package.json
+63 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/hbsfy/package.json
+64 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/igdeploy/package.json
+65 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/marked/package.json
+66 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/node-sass/package.json
+67 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/nodemon/package.json
+68 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/origami-build-tools/package.json
+69 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/run-sequence/package.json
+70 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/babel/package.json
+71 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/babel-external-helpers/package.json
+72 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/babel-node/package.json
+73 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/babel-plugin/package.json
+74 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/bower/package.json
+75 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/browser-sync/package.json
+76 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/eslint/package.json
+77 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/gulp/package.json
+78 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/handlebars/package.json
+79 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/marked/package.json
+80 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/node-sass/package.json
+81 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/nodemon/package.json
+82 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/obt/package.json
+83 verbose targetResolver reading package data from /Users/robin.kwong/isis-inc/node_modules/.bin/origami-build-tools/package.json
+84 verbose already installed skipping debowerify@^1.3.1 /Users/robin.kwong/isis-inc
+85 verbose already installed skipping del@^1.2.0 /Users/robin.kwong/isis-inc
+86 verbose already installed skipping eslint@^0.24.0 /Users/robin.kwong/isis-inc
+87 verbose already installed skipping fastclick@^1.0.6 /Users/robin.kwong/isis-inc
+88 verbose already installed skipping gulp@^3.9.0 /Users/robin.kwong/isis-inc
+89 verbose already installed skipping gulp-htmlclean@^2.6.4 /Users/robin.kwong/isis-inc
+90 verbose already installed skipping gulp-if@^1.2.5 /Users/robin.kwong/isis-inc
+91 verbose already installed skipping gulp-imagemin@^2.3.0 /Users/robin.kwong/isis-inc
+92 verbose already installed skipping gulp-minify-css@^1.2.0 /Users/robin.kwong/isis-inc
+93 verbose already installed skipping gulp-smoosher@0.0.7 /Users/robin.kwong/isis-inc
+94 verbose already installed skipping gulp-uglify@^1.2.0 /Users/robin.kwong/isis-inc
+95 verbose already installed skipping gulp-useref@^1.2.0 /Users/robin.kwong/isis-inc
+96 verbose already installed skipping gulp-util@^3.0.6 /Users/robin.kwong/isis-inc
+97 verbose already installed skipping handlebars@^4.0.3 /Users/robin.kwong/isis-inc
+98 verbose already installed skipping hbsfy@^2.3.1 /Users/robin.kwong/isis-inc
+99 verbose already installed skipping igdeploy@^0.1.0 /Users/robin.kwong/isis-inc
+100 verbose already installed skipping marked@^0.3.5 /Users/robin.kwong/isis-inc
+101 verbose already installed skipping nodemon@^1.3.7 /Users/robin.kwong/isis-inc
+102 verbose already installed skipping origami-build-tools@^3.2.0 /Users/robin.kwong/isis-inc
+103 verbose already installed skipping run-sequence@^1.1.1 /Users/robin.kwong/isis-inc
+104 verbose already installed skipping node-sass@^3.3.3 /Users/robin.kwong/isis-inc
+105 verbose already installed skipping auto-plug@^1.0.2 /Users/robin.kwong/isis-inc
+106 verbose already installed skipping babel@^5.6.14 /Users/robin.kwong/isis-inc
+107 verbose already installed skipping babel-core@^5.8.12 /Users/robin.kwong/isis-inc
+108 verbose already installed skipping babel-eslint@^3.1.23 /Users/robin.kwong/isis-inc
+109 verbose already installed skipping bower@^1.7.0 /Users/robin.kwong/isis-inc
+110 verbose already installed skipping browser-sync@^2.7.13 /Users/robin.kwong/isis-inc
+111 silly install resolved []
+112 info build /Users/robin.kwong/isis-inc
+113 info linkStuff @
+114 silly linkStuff @ has /Users/robin.kwong as its parent node_modules
+115 verbose linkBins @
+116 verbose linkMans @
+117 verbose rebuildBundles @
+118 verbose rebuildBundles [ '.bin',
+118 verbose rebuildBundles   'auto-plug',
+118 verbose rebuildBundles   'babel',
+118 verbose rebuildBundles   'babel-core',
+118 verbose rebuildBundles   'babel-eslint',
+118 verbose rebuildBundles   'bower',
+118 verbose rebuildBundles   'browser-sync',
+118 verbose rebuildBundles   'debowerify',
+118 verbose rebuildBundles   'del',
+118 verbose rebuildBundles   'eslint',
+118 verbose rebuildBundles   'fastclick',
+118 verbose rebuildBundles   'gulp',
+118 verbose rebuildBundles   'gulp-htmlclean',
+118 verbose rebuildBundles   'gulp-if',
+118 verbose rebuildBundles   'gulp-imagemin',
+118 verbose rebuildBundles   'gulp-minify-css',
+118 verbose rebuildBundles   'gulp-smoosher',
+118 verbose rebuildBundles   'gulp-uglify',
+118 verbose rebuildBundles   'gulp-useref',
+118 verbose rebuildBundles   'gulp-util',
+118 verbose rebuildBundles   'handlebars',
+118 verbose rebuildBundles   'hbsfy',
+118 verbose rebuildBundles   'igdeploy',
+118 verbose rebuildBundles   'marked',
+118 verbose rebuildBundles   'node-sass',
+118 verbose rebuildBundles   'nodemon',
+118 verbose rebuildBundles   'origami-build-tools',
+118 verbose rebuildBundles   'run-sequence' ]
+119 info install @
+120 info postinstall @
+121 verbose unsafe-perm in lifecycle true
+122 info @ Failed to exec postinstall script
+123 verbose stack Error: @ postinstall: `bower install`
+123 verbose stack Exit status 1
+123 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+123 verbose stack     at EventEmitter.emit (events.js:110:17)
+123 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+123 verbose stack     at ChildProcess.emit (events.js:110:17)
+123 verbose stack     at maybeClose (child_process.js:1015:16)
+123 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+124 verbose pkgid @
+125 verbose cwd /Users/robin.kwong/isis-inc
+126 error Darwin 14.5.0
+127 error argv "node" "/usr/local/bin/npm" "i"
+128 error node v0.12.4
+129 error npm  v2.10.1
+130 error code ELIFECYCLE
+131 error @ postinstall: `bower install`
+131 error Exit status 1
+132 error Failed at the @ postinstall script 'bower install'.
+132 error This is most likely a problem with the  package,
+132 error not with npm itself.
+132 error Tell the author that this fails on your system:
+132 error     bower install
+132 error You can get their info via:
+132 error     npm owner ls
+132 error There is likely additional logging output above.
+133 verbose exit [ 1, true ]
