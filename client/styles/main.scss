@@ -121,7 +121,7 @@ main p,
     text-align: center;
     margin-top: 1em;
     font-size: 0.875em;
-    > span {
+    > .bullet {
       margin: 0 10px;
     }
     }
@@ -212,6 +212,13 @@ main p,
   }
 }
 
+.updated {
+  text-transform: uppercase;
+  color: #9e2f50;
+  margin: 0;
+  font-weight: 400;
+}
+
 .o-grid-row {
   margin-bottom: 1.5em;
 }
@@ -221,6 +228,7 @@ main p,
 .lshow { @include oGridColumn((default: hide, L: 12, XL: 12)); }
 .mshow { @include oGridColumn((default:  hide, M:  12, L:  hide)); }
 .mlxlshow { @include oGridColumn((default:  hide, S: 12, M: 10, XL: 8)); @include oGridCenter;}
+.airstrikes-mlxlshow { @include oGridColumn((default:  hide, M: 12, L: 10, XL: 9)); @include oGridCenter;}
 .smuggling-mlxlshow { @include oGridColumn((default:  hide, L: 12)); @include oGridCenter; min-width: 600px;}
 .sshow { @include oGridColumn((default:  hide, S: 12, M: hide));}
 .smshow { @include oGridColumn((default:  hide, S: 12, L: hide));}
@@ -430,7 +438,7 @@ $linked-in-logo: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3
 
 }
 
-#byline {
+.byline {
   font-family: MetricWeb;
   font-size: 14px;
   font-weight: 200;
