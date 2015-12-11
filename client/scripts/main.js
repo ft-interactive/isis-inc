@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
   document.querySelector('.stories__container').innerHTML = storiesHTML;
   
-  document.querySelector('#byline').innerHTML = writeCredits(credits);
+  document.querySelector('.byline').innerHTML = writeCredits(credits);
 
   document.body.classList.add('ready');
 });
